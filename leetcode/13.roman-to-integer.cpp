@@ -23,19 +23,19 @@ public:
         map_Roman.insert({'C', 100});
         map_Roman.insert({'D', 500});
         map_Roman.insert({'M', 1000});
-        int iResult = 0;
+        int result = 0;
 
         for (int i = 0; i < s.length(); i++)
         {
             if (map_Roman[s[i]] < map_Roman[s[i + 1]])
             {
-                iResult = iResult + map_Roman[s[i + 1]] - map_Roman[s[i]];
-                i++;
+                result = result + map_Roman[s[i + 1]] - map_Roman[s[i]];
+                i ++;
             }
             else
-                iResult = iResult + map_Roman[s[i]];
+                result = result + map_Roman[s[i]];
         }
-        return iResult;
+        return result;
     }
 };
 // @lc code=end

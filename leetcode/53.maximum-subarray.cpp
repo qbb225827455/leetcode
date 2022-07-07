@@ -13,18 +13,18 @@ class Solution
 public:
     int maxSubArray(vector<int> &nums)
     {
-        int iResult = INT_MIN;
-        int iSum = 0;
+        int result = INT_MIN;
+        int sum = 0;
 
         for (int i = 0; i < nums.size(); i++)
         {
-            iSum += nums[i];
-            iResult = MaxNumber(iResult, iSum) ? iResult : iSum;
+            sum += nums[i];
+            result = MaxNumber(result, sum) ? result : sum;
 
-            if (iSum < 0)
-                iSum = 0;
+            if (sum < 0)
+                sum = 0;
         }
-        return iResult;
+        return result;
     }
     bool MaxNumber(int a, int b)
     {
